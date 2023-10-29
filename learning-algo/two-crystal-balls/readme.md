@@ -1,0 +1,1 @@
+Imagine you are given two identical crystal balls (or eggs), and you're standing in front of a 100-story building. You need to determine the highest floor from which you can drop a ball without it breaking. The challenge is to determine this floor while minimizing the number of drops and considering that you only have two balls.
