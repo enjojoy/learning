@@ -13,6 +13,47 @@ struct Queue {
 };
 typedef struct Queue Queue;
 
+void constructor(Queue *q);
+void enqueue(Queue *q, int value);
+void dequeue(Queue *q);
+int peek(Queue *q);
+
+int main() {
+  int choice, value;
+  Queue q;
+  constructor(&q);
+
+  printf("\nQueue using Linked List by Albi\n");
+  while (choice != 4) {
+    printf("\n1.Enquque\n2.Dequeue\n3.Peek\n4.Exit\n");
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+    case 1:
+      printf("\nEnter the value to enqueue: ");
+      scanf("%d", &value);
+      enqueue(&q, value);
+      break;
+    case 2:
+      printf("\nDequeued the front element\n");
+      dequeue(&q);
+      break;
+    case 3:
+      value = peek(&q);
+      if (value != -1) {
+        printf("\nFront value is: %d\n", value);
+      }
+      break;
+    case 4:
+      printf("\nBye :*\n");
+      break;
+    default:
+      printf("\nInvalid choice, please try again\n");
+    }
+  }
+  return 0;
+};
+
 void constructor(Queue *q) {
   q->length = 0;
   q->head = q->tail = NULL;
